@@ -4,11 +4,11 @@ import  useFetch  from "./useFetch"
 
 const BlogDetails = () => {
   const { id } = useParams()
-  const { data: blog, isPending, error} = useFetch('http://localhost:8000/blogs/' + id)
+  const { data: blog, isPending, error} = useFetch('https://jsonplaceholder.typicode.com/posts/' + id)
   const history = useHistory()
 
   const handleClick = () => {
-    fetch('http://localhost:8000/blogs/' + blog.id, {
+    fetch('https://jsonplaceholder.typicode.com/posts/' + blog.id, {
     method: 'DELETE'  
   }).then(()=>{
     history.push('/')
@@ -22,7 +22,7 @@ const BlogDetails = () => {
       {blog && (
         <article>
           <h2>{ blog.title }</h2>
-          <p>Write by { blog.author }</p>
+          <p>Escrito por <em>Felipe Ds Martins</em></p>
           <div>{ blog.body }</div>
           <button onClick={handleClick}>Delete</button>
         </article>
