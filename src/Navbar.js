@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { useSearchContext } from './SearchContext';
 
 
 const Navbar = () => {
